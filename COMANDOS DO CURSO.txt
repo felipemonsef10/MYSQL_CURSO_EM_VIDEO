@@ -1,0 +1,166 @@
+______________________________________________________________
+
+*** CRIANDO O BANCO DE DADOS CADASTRO *** -> CREATE DATABASE
+______________________________________________________________
+
+CREATE DATABASE cadastro
+DEFAULT CHARACTER SET utf8
+DEFAULT COLLATE utf8_general_ci;
+
+______________________________________________________________
+
+*** CRIANDO A TABELA PESSOAS *** -> CREATE TABLE
+______________________________________________________________
+
+CREATE TABLE IF NOT EXISTS pessoas(
+	id int not null auto_increment,
+	nome varchar(30) not null,
+	nascimento date,
+	sexo enum('M', 'F'),
+	peso decimal(5,2),
+	altura decimal(3,2),
+	nacionalidade varchar(20) DEFAULT 'Brasil',
+	primary key(id)
+) DEFAULT CHARSER = utf8;
+_______________________________________________________________
+
+*** INSERINDO DADOS NA TABELA PESSOAS *** -> INSERT INTO
+_______________________________________________________________
+
+INSERT INTO pessoas
+(nome, nascimento, sexo, peso, altura, nacionalidade)
+VALUES
+('Godofredo', '1984-01-02', 'M', '78.5', '1.83', 'Brasil');
+
+INSERT INTO pessoas VALUES
+('Felipe', '2005-06-15', 'M', '62.0', '1.65', 'Brasil');
+
+INSERT INTO pessoas
+(id, nome, nascimento, sexo, peso, altura, nacionalidade) 
+VALUES
+(DEFAULT, 'Cláudio', '1975-4-22', 'M', '99.0', '2.15', 'Brasil'),
+(DEFAULT, 'Pedro', '1999-12-3', 'M', '87', '2', DEFAULT),
+(DEFAULT, 'Janaína', '1987-11-12', 'F', '75.4', '1.66', 'EUA');
+______________________________________________________________
+
+*** ADICIONANDO COLUNAS *** -> ALTER TABLE ***** ADD COLUMN
+______________________________________________________________
+
+ALTER TABLE pessoas
+ADD COLUMN profissao varchar(10);
+
+ALTER TABL pessoas
+ADD profissao varchar(10) after nome;
+
+ALTER TABLE pessoas
+ADD COLUMN codigo int first;
+______________________________________________________________
+
+*** EXCLUINDO COLUNAS *** -> ALTER TABLE ***** DROP COLUMN
+______________________________________________________________
+
+ALTER TABLE pessoas
+DROP COLUMN profissao;
+______________________________________________________________________________________
+
+*** MODIFICANDO O TIPO DE UMA COLUNA *** -> ALTER TABLE ***** MODIFY COLUMN
+______________________________________________________________________________________
+
+ALTER TABLE pessoas
+MODIFY COLUMN profissao varchar(20)
+______________________________________________________________________________________
+
+*** MODIFICANDO O NOME E O TIPO DE UMA COLUNA *** - > ALTER TABLE ***** CHANGE COLUMN
+______________________________________________________________________________________
+
+ALTER TABLE pessoas
+CHANGE COLUMN profissao prof varchar(20);
+______________________________________________________________________________________
+
+*** ALTERANDO O NOME DE UMA TABELA *** -> ALTER TABLE ***** RENAME TO
+______________________________________________________________________________________
+
+ALTER TABLE pessoas
+RENAME TO teste;
+______________________________________________________________________________________
+
+*** CRIANDO UMA NOVA TABELA *** -> CREATE TABLE
+______________________________________________________________________________________
+
+CREATE TABLE IF NOT EXISTS cursos (
+	nome varchar(30) not null unique,
+	descricao text,
+    	carga_horaria int unsigned,
+    	totaulas int,
+	ano year default '2016'
+) DEFAULT CHARSET = utf8;
+___________________________________________________________________________________________________
+
+*** ADICIONANDO UMA COLUNA E TRANSFORMANDO EM PRIMARY KEY *** -> ALTER TABLE ***** ADD PRIMARY KEY
+___________________________________________________________________________________________________
+
+ALER TABLE cursos
+ADD COLUMN idcurso int first;
+
+ALTER TABLE cursos
+ADD PRIMARY KEY (idcurso);
+________________________________________________________
+
+*** EXCLUINDO UMA TABELA *** -> DROP TABLE
+________________________________________________________
+
+DROP IF EXISTS cursos;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

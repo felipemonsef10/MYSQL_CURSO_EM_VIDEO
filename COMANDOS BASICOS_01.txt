@@ -1,0 +1,19 @@
+- 1. CRIANDO UM BANCO DE DADOS COM NOME cadastro;
+- 2. USAO BANCO DE DADOS cadastro;
+- 3. CRIANDO UMA TABELA COM NOME pessoas;
+- 4. EXCLUINDO O DATABASE CADASTRO;
+
+1 -> CREATE DATABASE cadastro;
+
+2 -> USE cadastro;
+
+3 -> CREATE TABLE pessoas(
+    nome varchar(30),
+    idade tinyint(3),
+    sexo char(1),
+    peso float,
+    altura float,
+    nacionalidade varchar (20)
+);
+
+4 -> DROP DATABASE cadastro;

@@ -1,0 +1,81 @@
+Comando ALTER TABLE
+
+ADD COLUMN
+1. adicionando uma coluna;
+3. adicionando a coluna novamento em uma posição específica na tabela;
+
+DROP COLUMN
+2. removendo uma coluna;
+
+MODIFY COLUMN
+4. alterando caracteristicas de uma coluna;
+
+CHANGE COLUMN 
+5. alterando o nome de uma coluna;
+
+RENAME TO -> Alterar o nome da tabela inteira;
+6. alterando o nome da tabela;
+
+7. criando uma nova tabela sem primary key;
+
+ADD PRIMARY KEY
+8. adicionanto uma coluna na primeira posição para poder transforma-la em primary key;
+
+Comando DROP TABLE
+
+9. Apagando uma tabela;
+
+
+1 - 
+alter table pessoas
+add column profissao varchar(10);
+
+2 - 
+alter table pessoas
+drop column profissao;
+
+3 - 
+alter table pessoas
+add profissao varchar(10) after nome;
+
+alter table pessoas
+add column codigo int first;
+
+4 - 
+alter table pessoas
+modify column profissao varchar(20)
+
+5 - 
+alter table pessoas
+change column profissao prof varchar(20);
+
+6 - 
+alter table pessoas
+rename to teste;
+
+
+7 - 
+create table if not exists cursos (
+	nome varchar(30) not null unique,
+	descricao text,
+    	carga_horaria int unsigned,
+    	totaulas int,
+	ano year default '2016'
+) default charset = utf8;
+
+8 - 
+alter table cursos
+add column idcurso int first;
+
+alter table cursos
+add primary key(idcurso);
+
+9 - 
+drop if exists cursos;
+
+
+
+
+
+
+

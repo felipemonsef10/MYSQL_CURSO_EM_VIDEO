@@ -1,0 +1,14 @@
+CREATE DATABASE nome_base
+DEFAULT CHARACTER SET utf8
+DEFAULT COLLATE utf8_general_ci;
+------------------------------------------------------------
+CREATE TABLE nome_tabela (
+	atributo_1 int not null auto_increment,
+	atributo_2 varchar(20) not null unique,
+	atributo_3 enum ('M', 'F'),
+	atributo_4 decimal (5,2) unsigned,
+	atributo_5 text,
+	atributo_6 date default '2023',
+	PRIMARY KEY (atributo_1)
+) DEFAULT CHARSET = utf8;
+------------------------------------------------------------

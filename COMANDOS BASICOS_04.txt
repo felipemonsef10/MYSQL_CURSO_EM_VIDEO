@@ -1,0 +1,42 @@
+Comando UPDATE -> modifica valores de linhas
+____________________________________________________
+
+UPDATE cursos
+SET nome = 'HTML5'
+WHERE idcurso = '1';
+
+
+UPTDATE cursos
+SET nome = 'PHP', ano = '2010' 
+WHERE idcurso = '4';
+
+
+UPDATE cursos 
+SET nome = 'Java', carga = '40', ano = '2015'
+WHERE idcurso = '5'
+LIMIT 1;
+_____________________________________________________
+
+Comanto DELETE -> deleta valores de linhas
+_____________________________________________________
+
+DELETE FROM cursos
+WHERE idcurso = '8';
+
+DELETE FROM cursos
+WHERE ano = '2018'
+LIMIT 3;
+_____________________________________________________
+
+Comando TRUNCATE -> apaga todas as lindas
+_____________________________________________________
+
+TRUNCATE cursos;
+
+
+
+
+
+
+
+

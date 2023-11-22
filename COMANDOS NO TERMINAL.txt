@@ -1,0 +1,5 @@
+show databases; -> mostra os bancos de dados;
+
+use 'database' -> seleciona o banco desejado para uso;
+
+show tables; -> mostra as tabelas do banco selecionado;

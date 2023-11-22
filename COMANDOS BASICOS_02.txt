@@ -1,0 +1,43 @@
+Comando CREATE TABLE, CREATE DATABASE -> DDL
+1. Criando um database já configurado para suportar caracteres da nossa linguagem;
+2. Criando uma tabela melhorada já com uma chave primária;
+
+Comando ISERT INTO -> DML
+3. Inserindo dados um de cada vez na tabela; -> se a ordem dos campos for igual a ordem definida no banco não é necessário especificar os campos;
+4. Inserindo os dados tudo de uma vez na tabela;
+
+
+
+1 - 	
+create database cadastro
+default character set utf8
+default collate utf8_general_ci;
+
+2 - 
+create table pessoas(
+	id int not null auto_increment,
+	nome varchar(30) not null,
+	nascimento date,
+	sexo enum('M', 'F'),
+	peso decimal(5,2),
+	altura decimal(3,2),
+	nacionalidade varchar(20) default 'Brasil',
+	primary key(id)
+) default charset = utf8;
+
+3 -
+insert into pessoas
+(nome, nascimento, sexo, peso, altura, nacionalidade)
+values
+('Godofredo', '1984-01-02', 'M', '78.5', '1.83', 'Brasil');
+
+insert into pessoas values
+('Felipe', '2005-06-15', 'M', '62.0', '1.65', 'Brasil');
+
+4 -
+insert into pessoas
+(id, nome, nascimento, sexo, peso, altura, nacionalidade) 
+values
+(default, 'Cláudio', '1975-4-22', 'M', '99.0', '2.15', 'Brasil'),
+(default, 'Pedro', '1999-12-3', 'M', '87', '2', default),
+(default, 'Janaína', '1987-11-12', 'F', '75.4', '1.66', 'EUA');
