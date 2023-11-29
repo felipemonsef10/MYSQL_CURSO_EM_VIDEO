@@ -1,7 +1,7 @@
 Comando UPDATE -> modifica valores de linhas
 ____________________________________________________
 
-UPDATE cursos
+	UPDATE cursos
 SET nome = 'HTML5'
 WHERE idcurso = '1';
 
